@@ -44,10 +44,10 @@ export class AddInviteDialogComponent implements OnInit {
   }
 
 
-  close() {
+  close(): void{
     this.dialogRef.close()
   }
-  save() {
+  save(): void{
   
     if (this.inviteForm.invalid) {
       return;

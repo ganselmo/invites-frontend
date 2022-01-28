@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  drop(event: CdkDragDrop<{id:number,invite:Invite}[]>):void {
+  drop(event: CdkDragDrop<{id:number,invite:Invite}[]>): void {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -46,12 +46,12 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  addInvite():void{
+  addInvite(): void{
     this.dialog.open(AddInviteDialogComponent);
 
   }
 
-  saveInvites():void{
+  saveInvites(): void{
     if(this.confirmed.length===0)
     {
       return
@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  successDialog():void{
+  successDialog(): void{
   
       const dialogRef = this.dialog.open(SuccessComponent);
   

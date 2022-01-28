@@ -48,12 +48,12 @@ export class InvitesService {
 
   }
 
-  deleteInvite(id: number) {
+  deleteInvite(id: number): void{
     let values = this.unconfirmed.value;
     let filtered = values.filter((data) => data.id != id)
     this.unconfirmed.next(filtered);
   }
-  getNextId() {
+  getNextId():number{
     this.nextId++
     return this.nextId;
   }
