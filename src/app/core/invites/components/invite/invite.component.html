@@ -1,0 +1,11 @@
+<div class="main">
+    <div>{{inviteLine.invite.last_name}}, {{inviteLine.invite.name}}</div>
+    <div class="buttons" *ngIf="unconfirmed">
+        <button mat-icon-button color="primary" (click)="edit()">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button  color="accent" (click)="delete()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>

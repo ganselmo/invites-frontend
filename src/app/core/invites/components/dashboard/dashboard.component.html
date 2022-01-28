@@ -1,0 +1,33 @@
+<mat-card class="unconfirmed" >
+  <div class="container">
+    <h2>Posibles</h2>
+
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="unconfirmed" [cdkDropListConnectedTo]="[doneList]"
+      class="list" (cdkDropListDropped)="drop($event)">
+      <app-invite class="box" *ngFor="let item of unconfirmed" cdkDrag [inviteLine] ="item" [unconfirmed] ="true"></app-invite>
+    </div>
+
+
+    <div class="button-row">
+      <button mat-raised-button color = "primary" (click)="addInvite()">Agregar</button>
+
+
+    </div>
+
+  </div>
+</mat-card>
+<mat-card class="confirmed">
+  <div class="container">
+    <h2>Confirmados</h2>
+
+    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="confirmed" [cdkDropListConnectedTo]="[todoList]"
+      class="list" (cdkDropListDropped)="drop($event)">
+      <app-invite class="box" *ngFor="let item of confirmed" [inviteLine] ="item" [unconfirmed] ="false" cdkDrag></app-invite>
+    </div>
+
+    <div class="button-row">
+      <button mat-raised-button color="primary" (click)="saveInvites()" [disabled]="this.confirmed.length===0">Guardar</button>
+    </div>
+
+  </div>
+</mat-card>

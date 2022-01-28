@@ -1,0 +1,25 @@
+:host{
+    height: 100vh;
+    
+    /* grid container settings */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+      'header'
+      'main'
+      'footer';
+    app-header{
+        grid-area: header;
+    }
+    main{
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    app-footer{
+        grid-area: footer;
+    }
+}

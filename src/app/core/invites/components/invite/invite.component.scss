@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+    padding: 0 2vw;
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+    align-items: center;
+        height: 100%;
+    }
+  
+}
+
